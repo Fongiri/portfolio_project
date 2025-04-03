@@ -1,6 +1,6 @@
 # Faith Ongiri - Professional Portfolio
 
-A modern, responsive portfolio website showcasing my expertise as a Data Scientist and Software Engineer. View the live site: [https://fongiri.github.io/portfolio_project/](#) 
+A modern, responsive portfolio website showcasing my expertise as a Data Scientist and Software Engineer. View the live site: [https://fongiri.github.io/portfolio_project/] (#) 
 ![Portfolio Preview](preview.png)
 
 ## 🌟 Features
