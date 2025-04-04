@@ -181,6 +181,10 @@ section h2 {
     gap: 2rem;
     align-items: center;
     margin-bottom: 4rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .mission-container {
@@ -195,8 +199,20 @@ section h2 {
     width: 100%;
     height: 500px;
     object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.section-image:hover {
+    transform: scale(1.02);
+}
+
+.about-content p,
+.mission-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
 }
 
 /* Contact Section */
@@ -332,11 +348,11 @@ footer {
     .nav-links {
         margin-top: 1rem;
     }
-
+    
     .hero-content h1 {
         font-size: 2rem;
     }
-
+    
     section {
         padding: 2rem 1rem;
     }
@@ -375,6 +391,16 @@ footer {
         flex-direction: column;
         align-items: center;
     }
+
+    .about-container,
+    .mission-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-content h2,
+    .mission-content h3 {
+        font-size: 2rem;
+    }
 }
 
 /* Animations */
@@ -391,4 +417,47 @@ footer {
 
 .hero-content, section {
     animation: fadeIn 1s ease-out;
+}
+
+/* About & Mission Headers */
+.about-content h2,
+.mission-content h3 {
+    animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.about-content h2 span,
+.mission-content h3 span {
+    position: relative;
+    display: inline-block;
+}
+
+.about-content h2 span::after,
+.mission-content h3 span::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--secondary-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.about-content h2:hover span::after,
+.mission-content h3:hover span::after {
+    transform: scaleX(1);
+    transform-origin: left;
 } 

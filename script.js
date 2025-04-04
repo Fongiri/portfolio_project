@@ -70,4 +70,91 @@ const createMobileNav = () => {
 
 // Initialize mobile navigation on load and resize
 window.addEventListener('load', createMobileNav);
-window.addEventListener('resize', createMobileNav); 
+window.addEventListener('resize', createMobileNav);
+
+// Contact Form Submission
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        
+        // Basic validation
+        if (!name || !email || !message) {
+            alert('Please fill in all fields');
+            return;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address');
+            return;
+        }
+
+        try {
+            const formData = new FormData(contactForm);
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                alert('Thank you for your message! I will get back to you soon.');
+                contactForm.reset();
+            } else {
+                throw new Error('Failed to send message');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Sorry, there was an error sending your message. Please try again later.');
+        }
+    });
+}
+
+// Typing Animation
+const roles = ['Data Scientist', 'Frontend Developer', 'Problem Solver'];
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typingDelay = 100;
+let erasingDelay = 50;
+let newTextDelay = 2000; // Delay between roles
+
+function type() {
+    const currentRole = roles[roleIndex];
+    const typingText = document.getElementById('typing-text');
+    
+    if (isDeleting) {
+        typingText.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+        typingDelay = erasingDelay;
+    } else {
+        typingText.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+        typingDelay = 100;
+    }
+
+    if (!isDeleting && charIndex === currentRole.length) {
+        isDeleting = true;
+        typingDelay = newTextDelay;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        typingDelay = 500;
+    }
+
+    setTimeout(type, typingDelay);
+}
+
+// Start typing animation when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(type, newTextDelay);
+}); 

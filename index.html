@@ -6,57 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Faith Ongiri - Data Scientist & Software Engineer Portfolio">
     <meta name="keywords" content="Data Science, Software Engineering, Python, SQL, Machine Learning">
-    <title>Faith Ongiri - Data Scientist & Software Engineer</title>
-    
-    <!-- Stylesheets -->
+    <title>Faith Ongiri - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Faith Ongiri</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <header class="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-md z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-primary">Faith's Portfolio</div>
+            <ul class="flex space-x-8">
+                <li><a href="#about" class="text-gray-700 hover:text-primary transition-colors">About</a></li>
+                <li><a href="#skills" class="text-gray-700 hover:text-primary transition-colors">Skills</a></li>
+                <li><a href="#projects" class="text-gray-700 hover:text-primary transition-colors">Projects</a></li>
+                <li><a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="hero">
-            <div class="hero-content">
-                <img src="/faith ongiri.jpg" alt="Faith Ongiri" class="profile-image">
-                <h1>Faith Ongiri</h1>
-                <h2>Data Scientist & Software Engineer</h2>
-                <p>Virtual Assistant | Economics & Statistics Graduate</p>
+    <section id="hero" class="min-h-screen flex items-center justify-center px-4 py-20 bg-gradient-to-br from-primary to-secondary">
+        <div class="container mx-auto text-center animate-fade-in">
+            <div class="max-w-3xl mx-auto">
+                <img src="assets/images/profile.jpg" alt="Faith Ongiri" class="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-white mx-auto mb-8 object-cover shadow-lg">
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+                    Hi, I'm Faith Ongiri 👩🏽‍💻
+                </h1>
+                <div class="text-2xl md:text-3xl font-semibold text-white mb-8">
+                    <span id="typing-text" class="inline-block overflow-hidden whitespace-nowrap border-r-4 border-white"></span>
+                </div>
+                <p class="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
+                    I blend data and design to create intuitive, intelligent digital experiences. Let's build something smart—and beautiful—together.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="assets/cv/OngiriFaith_CV.pdf" download class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors flex items-center justify-center gap-2">
+                        <i class="fas fa-download"></i>
+                        Download CV
+                    </a>
+                    <a href="https://www.linkedin.com/in/faithongiri/" target="_blank" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2">
+                        <i class="fab fa-linkedin"></i>
+                        Connect on LinkedIn
+                    </a>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
+    <main>
         <section id="about">
             <div class="about-container">
                 <div class="about-content">
-                    <h2>About Me</h2>
+                    <h2 class="text-4xl font-bold text-primary mb-6 relative inline-block">
+                        <span class="relative z-10">About Me</span>
+                        <span class="absolute bottom-0 left-0 w-full h-2 bg-secondary/30 transform -skew-x-12"></span>
+                    </h2>
                     <p>I am a Data Scientist/Software Engineer and a Virtual Assistant with a Bachelor's degree in Economics and Statistics, a Nanodegree in Data Science, and a Software Engineering certificate from Power Learn Project Academy. I am actively seeking opportunities in data science and front-end web development roles to leverage my skills and make a positive impact on society.</p>
-                    <div class="cv-download">
-                        <a href="/OngiriFaith_CV.pdf" download class="btn">
-                            <i class="fas fa-download"></i> Download CV
-                        </a>
-                    </div>
                 </div>
                 <div class="about-image">
-                    <img src="/standby.jpeg" alt="Faith working" class="section-image">
+                    <img src="assets/images/about-image.jpg" alt="Faith working" class="section-image">
                 </div>
             </div>
             
             <div class="mission-container">
                 <div class="mission-image">
-                    <img src="/official.jpeg" alt="Mission visualization" class="section-image">
+                    <img src="assets/images/mission-image.jpg" alt="Mission visualization" class="section-image">
                 </div>
                 <div class="mission-content">
-                    <h3>My Mission</h3>
+                    <h3 class="text-4xl font-bold text-primary mb-6 relative inline-block">
+                        <span class="relative z-10">My Mission</span>
+                        <span class="absolute bottom-0 left-0 w-full h-2 bg-secondary/30 transform -skew-x-12"></span>
+                    </h3>
                     <p>"My mission is to connect cultures and transform livelihoods by sharing my knowledge, transferring skills, and taking advantage of my strengths, technology, and leadership skills."</p>
                 </div>
             </div>
@@ -65,7 +83,11 @@
         <section id="skills">
             <h2>Skills</h2>
             <div class="skills-grid">
-                <div class="skill-item">Data Analysis: Python</div>
+                <div class="skill-item">HTML</div>
+                <div class="skill-item">CSS</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">Python</div>
+                <div class="skill-item">Data Analysis</div>
                 <div class="skill-item">SQL</div>
                 <div class="skill-item">Excel</div>
                 <div class="skill-item">Business Analytics</div>
@@ -146,7 +168,7 @@
                 
                 <div class="contact-form">
                     <h3>Send Me a Message</h3>
-                    <form id="contactForm" action="https://formspree.io/f/faithongiri@gmail.com" method="POST">
+                    <form id="contact-form" action="https://formspree.io/f/xyzenbay" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
@@ -156,16 +178,10 @@
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <textarea id="message" name="message" required></textarea>
                         </div>
-                        <button type="submit" class="btn">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
+                        <button type="submit" class="btn">Send Message</button>
                     </form>
                 </div>
             </div>
