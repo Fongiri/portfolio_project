@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <!-- Alpine.js for interactivity -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
     <header class="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-md z-50">
@@ -22,6 +24,7 @@
                 <li><a href="#about" class="text-gray-700 hover:text-primary transition-colors">About</a></li>
                 <li><a href="#skills" class="text-gray-700 hover:text-primary transition-colors">Skills</a></li>
                 <li><a href="#projects" class="text-gray-700 hover:text-primary transition-colors">Projects</a></li>
+                <li><a href="#advocacy $ community impact" class="text-gray-700 hover:text-primary transition-colors">Advocacy $ Community Impact</a></li>
                 <li><a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a></li>
             </ul>
         </nav>
@@ -62,25 +65,64 @@
                         <span class="relative z-10">About Me</span>
                         <span class="absolute bottom-0 left-0 w-full h-2 bg-secondary/30 transform -skew-x-12"></span>
                     </h2>
-                    <p>I am a Data Scientist/Software Engineer and a Virtual Assistant with a Bachelor's degree in Economics and Statistics, a Nanodegree in Data Science, and a Software Engineering certificate from Power Learn Project Academy. I am actively seeking opportunities in data science and front-end web development roles to leverage my skills and make a positive impact on society.</p>
+                    <p>I am a Data Scientist and Software Engineer (specializing in front-end development and software testing). I combine technical expertise with a passion for creating efficient, user-friendly, and impactful digital solutions. My experience spans across various industries including retail, healthcare, business, education and environment where I’ve led and contributed to data-driven projects that solve real-world problems.
+
+In addition to my core technical roles, I also work as a Technical Virtual Assistant, providing support in data analysis, research, reporting, and digital operations. I enjoy collaborating with teams and clients to streamline workflows, build tools, and deliver results that matter.
+
+Beyond tech, I am a committed climate action advocate, champion for the rights and inclusion of Persons with Disabilities (PWDs), and a believer in the power of community-led impact. I actively participate in initiatives that address social and environmental challenges and aim to use technology as a force for good.
+
+I’m always open to opportunities that align with innovation, impact, and collaboration especially those that empower communities and promote equity through technology..</p>
                 </div>
                 <div class="about-image">
-                    <img src="assets/images/about-image.jpg" alt="Faith working" class="section-image">
+                    <img src="assets/images/unprofile.jpeg" alt="Faith working" class="section-image">
                 </div>
             </div>
             
-            <div class="mission-container">
-                <div class="mission-image">
-                    <img src="assets/images/mission-image.jpg" alt="Mission visualization" class="section-image">
-                </div>
-                <div class="mission-content">
-                    <h3 class="text-4xl font-bold text-primary mb-6 relative inline-block">
-                        <span class="relative z-10">My Mission</span>
-                        <span class="absolute bottom-0 left-0 w-full h-2 bg-secondary/30 transform -skew-x-12"></span>
-                    </h3>
-                    <p>"My mission is to connect cultures and transform livelihoods by sharing my knowledge, transferring skills, and taking advantage of my strengths, technology, and leadership skills."</p>
-                </div>
-            </div>
+           <div class="mission-container flex flex-col md:flex-row items-center gap-6"
+     x-data="{
+         active: 0,
+         images: [
+             'assets/images/un3.jpeg', 
+             'assets/images/un2.jpeg', 
+             'assets/images/UN4.jpeg',
+             'assets/images/un5.jpeg',
+             'assets/images/about-image.jpeg',
+             'assets/images/un6.jpeg',
+             'assets/images/ycc.jpeg',
+             'assets/images/WISD.jpeg',
+             'assets/images/coding.jpeg'
+         ],
+         init() {
+             setInterval(() => {
+                 this.active = (this.active + 1) % this.images.length;
+             }, 3000);
+         }
+     }">
+
+    <!-- Image Slider -->
+    <div class="mission-image relative overflow-hidden w-full md:w-1/2 h-64 md:h-96 rounded-lg">
+        <template x-for="(image, index) in images" :key="index">
+            <img 
+                :src="image" 
+                alt="" 
+                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
+                :class="{ 'opacity-100': active === index, 'opacity-0': active !== index }"
+            >
+        </template>
+    </div>
+
+    <!-- Mission Content -->
+    <div class="mission-content w-full md:w-1/2">
+        <h3 class="text-4xl font-bold text-primary mb-6 relative inline-block">
+            <span class="relative z-10">My Mission</span>
+            <span class="absolute bottom-0 left-0 w-full h-2 bg-secondary/30 transform -skew-x-12"></span>
+        </h3>
+        <p>
+           "My mission is to use the power of technology, compassion, and community to create lasting change empowering individuals, amplifying unheard voices, and building inclusive solutions that uplift lives and protect our planet."
+        </p>
+    </div>
+</div>
+
         </section>
 
         <section id="skills">
@@ -157,6 +199,36 @@
                 </div>
             </div>
         </section>
+        <section id="advocacy" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold text-primary mb-8">Advocacy & Impact</h2>
+    <p class="text-lg text-gray-700 mb-10">
+      I’m committed to leveraging technology, storytelling, and collaboration to create inclusive and sustainable communities. Here’s a look at the causes I champion and updates from the field.
+    </p>
+
+    <!-- Advocacy Highlights -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-primary mb-2">🌱 CGIAR Science Week</h3>
+        <p class="text-gray-700 text-sm mb-4">Joined global climate and food systems leaders to discuss sustainable agri-innovation for Africa.</p>
+        <a href="#" class="text-sm text-blue-600 hover:underline">Read more →</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-primary mb-2">♿ Accessible Transit for PWDs</h3>
+        <p class="text-gray-700 text-sm mb-4">Worked on a project enhancing public transport for people with invisible disabilities in Nairobi.</p>
+        <a href="#" class="text-sm text-blue-600 hover:underline">Read more →</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-primary mb-2">🌍 Africa Sustainability Week</h3>
+        <p class="text-gray-700 text-sm mb-4">Represented grassroots organizations to promote environmental resilience and inclusive development.</p>
+        <a href="#" class="text-sm text-blue-600 hover:underline">Read more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
         <section id="contact">
             <h2>Contact</h2>
